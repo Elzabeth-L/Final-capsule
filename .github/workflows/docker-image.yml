@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image CI + Manual Gate
 
 on:
   push:
@@ -51,4 +51,4 @@ jobs:
     environment: production
     steps:
       - name: Approved deployment
-        run: echo Deploying after Approval
+        run: echo Deploying after Approval 
