@@ -2,8 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    # tags:
-    #   - 'v*'
+    branches:
+      - main
+  workflow_dispatch: 
 
 permissions:
   contents: read
@@ -30,10 +31,10 @@ jobs:
       with:
         images: ghcr.io/${{ github.repository }}
         tags: |
-          type=semver,pattern={{version}}
-          type=semver,pattern={{major}}.{{minor}}
-          type=semver,pattern={{major}}
+          type=sha,prefix=sha-,format=short
           type=raw,value=latest
+        flavor: |
+          latest=false
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
