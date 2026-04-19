@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: shaikhamadi/logistics-tracker-app:latest
+        image: ghcr.io/elzabeth-l/final-capsule:5f14b9f9ff4cbc72ccfcafe801828d2113d22ab0
         ports:
         - containerPort: 3000
         env:
